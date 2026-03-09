@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CALC — 9000</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="calculator">
+  <div class="calc-header">
+    <span class="calc-brand">Calc-9000</span>
+    <div class="status-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="display">
+    <div class="display-expression" id="expression"></div>
+    <div class="display-main" id="display">0</div>
+  </div>
+
+  <div class="btn-grid">
+    <!-- Row 1 -->
+    <button class="btn btn-clear" onclick="clearAll()">AC</button>
+    <button class="btn btn-special" onclick="toggleSign()">+/−</button>
+    <button class="btn btn-special" onclick="percent()">%</button>
+    <button class="btn btn-op" onclick="setOp('/')">÷</button>
+
+    <!-- Row 2 -->
+    <button class="btn" onclick="input('7')">7</button>
+    <button class="btn" onclick="input('8')">8</button>
+    <button class="btn" onclick="input('9')">9</button>
+    <button class="btn btn-op" onclick="setOp('*')">×</button>
+
+    <!-- Row 3 -->
+    <button class="btn" onclick="input('4')">4</button>
+    <button class="btn" onclick="input('5')">5</button>
+    <button class="btn" onclick="input('6')">6</button>
+    <button class="btn btn-op" onclick="setOp('-')">−</button>
+
+    <!-- Row 4 + eq spanning rows 4-5 -->
+    <button class="btn" onclick="input('1')">1</button>
+    <button class="btn" onclick="input('2')">2</button>
+    <button class="btn" onclick="input('3')">3</button>
+    <button class="btn btn-eq" onclick="calculate()" style="grid-row: span 2;">=</button>
+
+    <!-- Row 5 -->
+    <button class="btn btn-zero" onclick="input('0')">0</button>
+    <button class="btn" onclick="inputDot()">.</button>
+  </div>
+
+  <div class="calc-footer">
+    <span>SYS:OK</span>
+    <span id="memStatus">MEM:CLEAR</span>
+    <span>V2.1</span>
+  </div>
+</div>
+
+<script src="node.js"></script>
+
+</body>
+</html>
